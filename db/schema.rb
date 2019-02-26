@@ -54,4 +54,5 @@ ActiveRecord::Schema.define(version: 2019_02_26_110449) do
   end
 
   add_foreign_key "pairs", "profiles"
+  add_foreign_key "profiles", "users"
 end
