@@ -1,5 +1,7 @@
 class PairsController < ApplicationController
   before_action :set_pair, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @pairs = Pair.all
   end
