@@ -5,7 +5,7 @@ class CreateProfiles < ActiveRecord::Migration[5.2]
       t.string :first_name
       t.string :address
       t.string :tel
-      t.references :user
+      t.references :user, foreign_key: true
 
       t.timestamps
     end
