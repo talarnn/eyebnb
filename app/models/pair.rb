@@ -2,7 +2,7 @@ class Pair < ApplicationRecord
   belongs_to :profile
   has_many :bookings, dependent: :destroy
 
-  validates :title, presence: true, uniqueness: true
+  validates :title, presence: true
   validates :price, presence: true
   validates :profile_id, presence: true
 
