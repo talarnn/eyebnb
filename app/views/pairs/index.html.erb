@@ -1,5 +1,17 @@
-<h1>
+<% if user_signed_in?  %>
+  <h1><%= current_user.email %> </h1>
+<% else %>
+  <h1><%= link_to "Create a account",new_user_registration_path  %></h1>
+<% end %>
+
+<% unless user_signed_in? %>
+  <h1><%= link_to "Sign In",new_user_session_path  %></h1>
+<% end %>
+
+<ul>
   <% @pairs.each do |pair| %>
-    <%= pair.title %>
+    <li>
+      <%= link_to pair.title, pair_path(pair[:id]) %>
+    </li>
   <% end %>
-</h1>
+</ul>
