@@ -1,0 +1,35 @@
+<h1>Profiles#dashboard</h1>
+
+<hr>
+
+<h2>Glasses I want to wear</h2>
+
+<ul>
+  <% @profile_bookings.each do |booking| %>
+    <li><%= booking.pair.title %> - status : <%= booking.status %></li>
+  <% end %>
+</ul>
+
+<hr>
+
+<h2>My glasses' booking</h2>
+
+<ul>
+  <% @profile_pairs.each do |pair| %>
+      <li> 
+        <%= pair.title if pair.bookings %>
+      </li>
+  <% end %>
+</ul>
+
+<hr>
+
+<h2>My pairs</h2>
+
+<ul>
+  <% @profile_pairs.each do |pair| %>
+      <li> 
+        <%= pair.title %>
+      </li>
+  <% end %>
+</ul>
