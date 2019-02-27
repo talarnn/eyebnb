@@ -1,7 +1,10 @@
 class ProfilesController < ApplicationController
   before_action :set_profile
-  
+
   def show
+    @profile.bookings.each do |booking|
+      @pair = booking.pair
+    end
   end
 
   def dashboard
@@ -23,7 +26,7 @@ class ProfilesController < ApplicationController
   private
 
   def set_profile
-    @profile = Profile.find(params[:id])
+    @profile = User.find(params[:id]).profile
   end
 
   def profile_params

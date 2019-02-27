@@ -1,1 +1,9 @@
 // Specific CSS for your home-page
+.flex-list-index{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}

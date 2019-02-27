@@ -1,2 +1,28 @@
-<h1><%= @profile.first_name %> <%= @profile.last_name %></h1>
-<%= cl_image_tag @profile.profile_pic, height: 300, width: 300, crop: :fill %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <%= @profile.profile_pic %>
+      <%= render 'panel', profile: @profile %>
+    </div>
+    <div class="col-xs-12 col-sm-8">
+      <h1><%= @profile.first_name %> - <%= @profile.last_name %></h1>
+      <p>Member since <%= @profile.created_at %></p>
+      <div class="container-previous-bookings">
+      <% if @profile.bookings != [] %>
+        <h2>Previous bookings</h2>
+        <%= render 'card-pair-mini', profile: @profile %>
+      <% end %>
+      </div>
+      <div class="container-owned-pairs">
+      <% if @profile.pairs != [] %>
+        <h2><%= @profile.first_name %> has some pairs to lease!</h2>
+        <%= render 'card-pair-mini', profile: @profile %>
+      <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+      

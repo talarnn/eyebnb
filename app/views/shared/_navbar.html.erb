@@ -10,8 +10,8 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Profile", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Dashboard", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Profile", profile_path(current_user) , class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Dashboard", dashboard_path(current_user) , class: "navbar-wagon-item navbar-wagon-link" %>
 
 
       <!-- Avatar with dropdown menu -->
@@ -63,7 +63,7 @@
 <% if !user_signed_in? %>
   <div class='cta-signup'>
     <p>Want to lease your pair ? Rent one ?  </p>
-    <%= link_to 'create an account here' %>
+    <%= link_to 'create an account here', new_user_registration_path %>
   </div>
 <% end %>
 

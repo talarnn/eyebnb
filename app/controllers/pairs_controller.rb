@@ -17,7 +17,7 @@ class PairsController < ApplicationController
     @pair = Pair.new(pair_params)
     #doit fonctionner une fois que le sign in sera mis en place
     #changer la ligne ci-dessous plus tard
-    @pair.profile_id = User.find(1).id
+    @pair.profile_id = current_user.profile.id
     if @pair.save
       redirect_to pair_path(@pair)
     else
@@ -46,7 +46,9 @@ class PairsController < ApplicationController
   def pair_params
     params.require(:pair).permit(
       :title,
+      :brand,
       :price,
+      :description,
       :profile_id,
       :correction_type,
       :right_eye_correction,
