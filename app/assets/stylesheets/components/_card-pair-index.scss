@@ -1,0 +1,40 @@
+
+.pair-card-index{
+  height: 400px;
+  width: 330px;
+  background-color: white;
+  margin: 20px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.pair-card-index a :hover {
+  text-decoration: none;
+}
+
+.pair-card-index-picture{
+  height: 230px;
+  width: 330px;
+  background-repeat: none;
+  background-size: cover;
+
+}
+
+.pair-card-index-body{
+  padding-top: 10px;
+  margin: 0;
+}
+
+.pair-card-index-body h4{
+  padding-left: 20px;
+}
+
+.pair-card-index-body p {
+  width: 100%;
+  text-align: center;
+}
+
+.pair-card-index-correction{
+
+  display: flex;
+  justify-content: space-around;
+}
