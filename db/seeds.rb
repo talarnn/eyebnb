@@ -15,10 +15,27 @@ puts "Creating 10 fakes users with theirs pairs"
 10.times do
   user = User.new(email: Faker::Internet.email, password: Faker::Company.name)
   user.save!
-  profile = Profile.new(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, address: Faker::Address.full_address, tel: rand(10..99), user: user)
+  profile = Profile.new(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    address: Faker::Address.full_address,
+    tel: rand(10..99),
+    user: user
+  )
   profile.save!
-  rand(1..5).times do
-    pair = Pair.new(title: "#{Faker::FunnyName.name} #{rand(1..9999)}", brand: Faker::App.name, description: Faker::Games::Fallout.quote, right_eye_correction: rand(0..10), left_eye_correction: rand(0..10), correction_type: ["Presbyopia", "Short sightedness", "Astigmatic", "Farsightedness"].sample , price: rand(10..100), profile: profile )
+  rand(1..10).times do
+    pair = Pair.new(
+      title: "#{Faker::FunnyName.name} #{rand(1..9999)}",
+      brand: Faker::App.name,
+      description: Faker::Games::Fallout.quote,
+      right_eye_correction: rand(0..10),
+      left_eye_correction: rand(0..10),
+      correction_type: ["Presbyopia", "Short sightedness", "Astigmatic", "Farsightedness"].sample,
+      price: rand(10..100),
+      profile:profile,
+      picture:'image/upload/v1551276958/gfpgnejglh2kvvzer0p2.jpg'
+    )
+    puts pair.picture
     pair.save!
   end
 end
