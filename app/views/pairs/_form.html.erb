@@ -3,7 +3,8 @@
   <%= f.input :description, placeholder: 'Give a fancy description to your glasses!' %>
   <%= f.input :brand, placeholder: 'Brand of your glasses' %>
   <%= f.input :price, placeholder: 'What is your price per day?' %>
-  <%= f.input :picture, placeholder: 'Import your picture' %>
+  <%= f.input :picture %>
+  <%= f.input :picture_cache, as: :hidden %>
   <%= f.input :correction_type, collection: ["Presbyopia", "Short sightedness", "Astigmatic", "Farsightedness"] %>
   <%= f.input :left_eye_correction, placeholder: "Don't be shy!" %>
   <%= f.input :right_eye_correction, placeholder: "Don't be shy!" %>
