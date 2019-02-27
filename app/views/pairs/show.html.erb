@@ -1,5 +1,4 @@
-<%= cl_image_tag(@pair.picture,
-      width: 400, height: 300, crop: :fill) %>
+<%= cl_image_tag(@pair.picture, width: 400, height: 300, crop: :fill) %>
 <%= @pair.profile.profile_pic %>
 <h2>Description</h2>
 <%= link_to "Edit your pair", edit_pair_path(@pair) %>
