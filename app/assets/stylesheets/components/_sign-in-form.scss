@@ -3,13 +3,13 @@
   justify-content: center;
 }
 
-.form-div {
+.form-div-2 {
   display: flex;
   justify-content: center;
   position: relative;
   width: 600px;
-  height: 650px;
-  padding: 40px 20px 50px 20px;
+  height: 450px;
+  padding: 50px 20px 50px 20px;
   margin: 30px;
   background: #FFFFFF;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
@@ -29,13 +29,7 @@
   border-radius: 6px;
 }
 
-.back-to-other-options {
-  position: absolute;
-  top: 15px;
-  left: 20px;
-}
-
-.sign-up-button{
+.sign-in-button{
   margin: 40px 0 0 0;
   padding: 5px;
   background-color: none;
