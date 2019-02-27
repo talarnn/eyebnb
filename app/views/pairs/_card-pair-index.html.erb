@@ -1,0 +1,19 @@
+
+<div class="pair-card-index">
+  <a href=<%= pair_path(pair.id) %>>
+  <div class="pair-card-index-picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
+         url('<%= cl_image_path pair.picture %>')">
+   <!--  <%= cl_image_tag pair.picture, height: 230, width: 330, crop: :fit %> -->
+  </div>
+  <div class="pair-card-index-body">
+    <h4 class="red-font capitalize bold"><%= pair.brand %></h3>
+    <h4><%= pair.title %></h3>
+    <p class="bold blue-font">correction: <%= pair.correction_type %> </p>
+    <div class="pair-card-index-correction">
+      <div class="bold blue-font">L: <%= pair.left_eye_correction %></div>
+      <div class="bold blue-font">R: <%= pair.right_eye_correction %></div>
+    </div>
+  </div>
+  </a>
+</div>
+
