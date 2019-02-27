@@ -1,7 +1,6 @@
-<ul>
+
+<div class="flex-list-index">
   <% @pairs.each do |pair| %>
-    <li>
-      <%= link_to pair.title, pair_path(pair[:id]) %>
-    </li>
+    <%= render 'card-pair-index', pair: pair %>
   <% end %>
-</ul>
+</div>
