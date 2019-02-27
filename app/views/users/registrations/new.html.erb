@@ -12,7 +12,7 @@
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "email", class: "field" }%>
-        <%= f.input :password,:label => "password",
+        <%= f.input :password, :label => "password",
                     required: true,
                     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                     input_html: { autocomplete: "new-password", class: "field" } %>
