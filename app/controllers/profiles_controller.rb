@@ -5,7 +5,6 @@ class ProfilesController < ApplicationController
   end
 
   def dashboard
-    @profile = User.find(params[:id]).profile
     @profile_bookings = @profile.bookings
     @profile_pairs = @profile.pairs
   end
