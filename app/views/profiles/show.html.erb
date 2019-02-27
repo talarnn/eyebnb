@@ -1,1 +1,2 @@
 <h1><%= @profile.first_name %> <%= @profile.last_name %></h1>
+<%= cl_image_tag @profile.profile_pic, height: 300, width: 300, crop: :fill %>

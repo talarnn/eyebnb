@@ -1,0 +1,39 @@
+.card-product {
+  overflow: hidden;
+  height: 500px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-product .product-img {
+  height: 100%;
+  width: 60%;
+  object-fit: fill;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.side {
+  display:inline-block;
+  text-align: center;
+}
+
+.side1 {
+  margin-right: 30px;
+}
+
+.side2 {
+  margin-left: 30px;
+}
+
+.card-product-infos h2 {
+  margin-bottom: 50px;
+}
+
+.card-product-infos a {
+  margin-top: 100px;
+}
