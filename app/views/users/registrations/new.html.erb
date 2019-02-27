@@ -1,28 +1,33 @@
-<h2>Sign up</h2>
+<container class="form-container">
+  <div class="form-div">
+    <p class="back-to-other-options">< back to other options</p>
 
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+      <div class="form-inputs">
+          <%= f.input :first_name, :label => "first name", as: :fake, input_html: { class: "field" } %>
+          <%= f.input :last_name, :label => "last name", as: :fake, input_html: { class: "field" } %>
+          <%= f.input :email, :label => "email",
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email", class: "field" }%>
+        <%= f.input :password,:label => "password",
+                    required: true,
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password", class: "field" } %>
+        <%= f.input :password_confirmation, :label => "password confirmation",
+                    required: true,
+                    input_html: { autocomplete: "new-password", class: "field" } %>
+      </div>
 
-  <div class="form-inputs">
-      <%= f.input :first_name, as: :fake %>
-      <%= f.input :last_name, as: :fake %>
-      <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+      <div class="form-actions sign-up-button">
+        <%= f.button :submit, "sign up" %>
+      </div>
+      <div class="text-standard">
+        already have an account ? <a href="/users/sign_in" class=bold>connect here</a>
+      </div>
+    <% end %>
   </div>
+</container>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
