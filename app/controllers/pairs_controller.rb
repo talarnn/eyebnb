@@ -44,7 +44,15 @@ class PairsController < ApplicationController
   private
 
   def pair_params
-    params.require(:pair).permit(:title, :price, :profile_id, :correction_type, :right_eye_correction, :left_eye_correction)
+    params.require(:pair).permit(
+      :title,
+      :price,
+      :profile_id,
+      :correction_type,
+      :right_eye_correction,
+      :left_eye_correction,
+      :picture
+    )
   end
 
   def set_pair

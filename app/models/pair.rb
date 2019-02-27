@@ -9,4 +9,6 @@ class Pair < ApplicationRecord
   validates :correction_type, presence: true, inclusion: { in: ["Presbyopia", "Short sightedness", "Astigmatic", "Farsightedness"] }
   validates :right_eye_correction, presence: true
   validates :left_eye_correction, presence: true
+
+  mount_uploader :picture, PhotoUploader # enables image upload
 end
