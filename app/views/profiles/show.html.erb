@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-4">
-      <%= @profile.profile_pic %>
+      <div class="img-container">
+        <img class="image" src='http://kitt.lewagon.com/placeholder/users/ssaunier'>
+      </div>
       <%= render 'panel', profile: @profile %>
     </div>
     <div class="col-xs-12 col-sm-8">
@@ -13,11 +15,7 @@
         <%= render 'card-pair-mini', profile: @profile %>
       <% end %>
       </div>
-      <div class="container-owned-pairs">
-      <% if @profile.pairs != [] %>
-        <h2><%= @profile.first_name %> has some pairs to lease!</h2>
-        <%= render 'card-pair-mini', profile: @profile %>
-      <% end %>
+
       </div>
 
     </div>
