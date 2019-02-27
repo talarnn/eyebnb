@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   patch '/booking/:id', to: "bookings#update"
   delete '/booking/:id', to: "bookings#destroy"
   resources :profiles, only: [ :create, :show, :edit, :update ]
-  get 'profiles/:id/dashboard', to: "profiles#dashboard"
+  get 'profiles/:id/dashboard', to: "profiles#dashboard", as: 'dashboard'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
