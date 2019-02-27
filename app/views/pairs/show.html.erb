@@ -1,10 +1,1 @@
-<%= cl_image_tag(@pair.picture, width: 400, height: 300, crop: :fill) %>
-<%= @pair.profile.profile_pic %>
-<h2>Description</h2>
-<%= link_to "Edit your pair", edit_pair_path(@pair) %>
-<p>Brand: <%= @pair.brand %></p>
-<p>Correction type: <%= @pair.correction_type %></p>
-<p>Left-eye correction: <%= @pair.left_eye_correction %></p>
-<p>Right-eye correction: <%= @pair.right_eye_correction %></p>
-<p>Price per day: <%= @pair.price %></p>
-<%= link_to "Book this pair", new_pair_booking_path(@pair.id) %>
+<%= render 'card-pair-big', pair: @pair %>
