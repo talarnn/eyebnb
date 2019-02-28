@@ -13,10 +13,7 @@
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "email" } %>
-      </div>
-
-      <div class="form-actions sign-button">
-        <%= f.button :submit, "Send me reset password instructions" %>
+        <%= f.button :submit, "send me reset password instructions", class: "w-400 submit-button red-hover" %>
       </div>
     <% end %>
   </div>

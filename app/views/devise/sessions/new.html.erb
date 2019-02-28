@@ -10,17 +10,18 @@
                     required: false,
                     input_html: { autocomplete: "current-password", class: "form-field" } %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        
+        <div>
+        <a class="text-standard" href="/users/password/new" class=bold>forgot your password ?</a>
+        </div>
+
+        <%= f.button :submit, "sign in", class: "w-400 submit-button red-hover" %>
       </div>
 
-      <a class="text-standard" href="/users/password/new" class=bold>forgot your password ?</a>
 
-      <div class="form-actions sign-button">
-        <%= f.button :submit, "sign in" %>
-      </div>
       <div class="blue-font">
         don't have an account yet ? <a href="/users/sign_up" class="bold">sign up here</a>
       </div>
     <% end %>
-
   </div>
 </container>
