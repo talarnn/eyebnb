@@ -15,6 +15,7 @@ class PairsController < ApplicationController
 
   def create
     @pair = Pair.new(pair_params)
+    @pair.remote_picture_url = 'https://cdn.trendhunterstatic.com/thumbs/ksubi-eyewear-sigma.jpeg'
     @pair.profile_id = current_user.profile.id
     if @pair.save
       redirect_to pair_path(@pair)
