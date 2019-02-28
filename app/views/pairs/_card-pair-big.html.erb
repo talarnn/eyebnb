@@ -1,18 +1,24 @@
-<div class="container">
-  <div class ="card-product">
-    <%= cl_image_tag @pair.picture, height: 500, width: 500, crop: :fill %>
-    <div class="card-product-infos">
-      <h2><%= @pair.brand %></h2>
-      <p><%= @pair.title %></p>
-      <p>Correction: <%= @pair.correction_type %></p>
-      <p class="side side1">L <%= @pair.left_eye_correction %></p>
-      <p class="side side2">R <%= @pair.right_eye_correction %></p>
-      <p></p><%= link_to "Book it", new_pair_booking_path(@pair.id) %>
+<div class="pair-card-big">
+  <div class="pair-card-big-picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
+         url('<%= cl_image_path pair.picture %>')">
+  </div>
+  <div class ="pair-card-big-body">
+    <div class="pair-card-big-infos">
+      <h4 class="blue-font right-align"><%= @pair.price %> €/day</h4>
+      <h4 class="red-font capitalize bold"><%= @pair.brand %></h4>
+      <h4><%= pair.title %></h4>
+      <p><%= @pair.description %></p>
+      <p class="bold blue-font centered">correction: <%= pair.correction_type %> </p>
+      <div class="pair-card-index-correction">
+        <div class="bold blue-font">L: <%= pair.left_eye_correction %></div>
+        <div class="bold blue-font">R: <%= pair.right_eye_correction %></div>
+      </div>
     </div>
-    <img class="small-avatar" src="<%= @pair.profile.profile_pic %>">
+    <div class="pair-card-big-controls">
+      <%= link_to "Book it", new_pair_booking_path(@pair) %>
+      <%= link_to "Edit", edit_pair_path(@pair) %>
+      <%= link_to "Delete", pair_path(@pair), method: :delete %>
+    </div>
   </div>
-  </div>
+  <!-- <img class="pair-card-big-owner" src="<%= @pair.profile.profile_pic %>"> -->
 </div>
-
-
-
