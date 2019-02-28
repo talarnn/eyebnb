@@ -33,10 +33,9 @@
   border-radius: 6px;
 }
 
-.sign-button{
-  margin-top: 40px;
-  margin-bottom: 20px;
-  padding: 5px;
+.submit-button {
+  margin-top: 30px;
+  margin-bottom: 15px; 
   background-color: none;
   border: 1.5px dashed #E63946;
   box-sizing: border-box;
@@ -45,11 +44,26 @@
   text-align: center;
   font-family: Montserrat;
   font-style: normal;
-  font-weight: bolder ;
+  font-weight: normal;
   line-height: normal;
   font-size: 18px;
   text-align: center;
   color: #E63946;
+}
+
+.red-hover:hover {
+  border: 1.5px solid;
+  color: #E63946;
+}
+
+.green-hover:hover {
+  border: 1.5px solid;
+  color: #77ACA2;
+}
+
+.green-button{
+  border: 1.5px dashed #77ACA2;
+  color: #77ACA2;
 }
 
 .back-to-sign{

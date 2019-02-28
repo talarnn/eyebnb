@@ -3,25 +3,24 @@
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
-      <div class="form-inputs">
-          <%= f.input :first_name, :label => "first name", as: :fake, input_html: { class: "form-field" } %>
-          <%= f.input :last_name, :label => "last name", as: :fake, input_html: { class: "form-field" } %>
-          <%= f.input :email, :label => "email",
+      <div class="form-inputs lowercase">
+          <%= f.input :first_name, as: :fake, input_html: { class: "form-field" } %>
+          <%= f.input :last_name, as: :fake, input_html: { class: "form-field" } %>
+          <%= f.input :email,
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "email", class: "form-field" }%>
-        <%= f.input :password, :label => "password",
+        <%= f.input :password,
                     required: true,
                     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                     input_html: { autocomplete: "new-password", class: "form-field" } %>
-        <%= f.input :password_confirmation, :label => "password confirmation",
+        <%= f.input :password_confirmation,
                     required: true,
                     input_html: { autocomplete: "new-password", class: "form-field" } %>
       </div>
 
-      <div class="form-actions sign-button">
-        <%= f.button :submit, "sign up" %>
-      </div>
+        <%= f.button :submit, "sign up", class: "w-400 submit-button red-hover" %>
+  
       <div class="blue-font">
         already have an account ? <a href="/users/sign_in" class="bold">connect here</a>
       </div>
