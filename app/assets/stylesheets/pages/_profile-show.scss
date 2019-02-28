@@ -1,10 +1,35 @@
-.container-previous-bookings {
-  margin: 0 auto;
-  width: 470px;
+.flex {
+  display: flex;
+}
+
+.infos {
+  flex: 0 0 250px;
+  height: 100vh;
+  position: sticky !important;
+  top: 0 !important;
+}
+
+.bookings {
+  flex: 1;
+  top: 0 !important;
+  margin: 15px;
+  text-align: center;
 }
 
 .img-container img {
   width: 100%;
   margin-top: 25px;
   margin-bottom: 50px;
+}
+
+.bookings h1 {
+  margin-bottom: 30px;
+}
+
+.card-mini-container {
+  text-align: center;
+}
+
+.display {
+  display: inline-block;
 }

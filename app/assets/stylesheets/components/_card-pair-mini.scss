@@ -1,10 +1,14 @@
 .card-mini {
-  height: 175px;
+  height: 140px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
+  margin: 12px;
+  width: 230px;
+  display: inline-block;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
 }
 
 .card-mini-description {
@@ -13,6 +17,7 @@
   left: 10px;
 }
 
-.card-mini-description h2 {
+.card-mini-description h4 {
   font-size: 24px;
+  text-shadow: 1px 1px 2px grey;
 }
