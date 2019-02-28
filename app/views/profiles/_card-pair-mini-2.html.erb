@@ -1,0 +1,19 @@
+
+<% if pair.picture?  %>
+  <div class="card-mini" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
+    url('<%= cl_image_path pair.picture %>')">
+    <div class="card-mini-description">
+  <h4><%= pair.title %></h4>
+</div>
+
+  </div>
+<% else  %>
+  <div class="card-mini" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
+    url('<%= image_url 'user-placeholder' %>')">
+    <div class="card-mini-description">
+  <h4><%= pair.title %></h4>
+</div>
+
+  </div>
+<% end %>
+

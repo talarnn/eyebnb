@@ -1,30 +1,40 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <div class="img-container">
-        <% if @profile.profile_pic? %>
-            <%= cl_image_tag @profile.profile_pic, class: "image"%>
-          <% else %>
-            <%= image_tag "user-placeholder.png", class: "image"%>
-          <% end %>
-      </div>
-      <%= render 'panel', profile: @profile %>
+<div class="container flex">
+  
+  <div class="infos">
+    <div class="img-container">
+      <% if @profile.profile_pic? %>
+        <%= cl_image_tag @profile.profile_pic, class: "image"%>
+      <% else %>
+        <%= image_tag "user-placeholder", class: "image"%>
+      <% end %>
     </div>
-    <div class="col-xs-12 col-sm-8">
+    <%= render 'panel', profile: @profile %>
+
+  </div>
+  
+  <div class="bookings">
+    <div class="titles">
       <h1><%= @profile.first_name %> - <%= @profile.last_name %></h1>
-      <p>Member since <%= @profile.created_at %></p>
-      <div class="container-previous-bookings">
+      <p>Member since <%= @profile.created_at.to_date %></p>  
+    </div>
+    <div class="card-mini-container">
+    <h3>Previous bookings</h3>
+      <div class="display">
       <% if @profile.bookings != [] %>
-        <h2>Previous bookings</h2>
-        <%= render 'card-pair-mini', profile: @profile %>
+        <% @profile.bookings.each do |booking| %>
+          <%= render 'card-pair-mini', booking: booking %>
+        <% end %>
       <% end %>
       </div>
-
-      </div>
-
+    </div>
+    <div class="card-mini-container-2">
+    <h3><%= @profile.first_name %> has some pairs to lease!</h3>
+      <div class="display">
+      <% if @profile.pairs != [] %>
+        <% @profile.pairs.each do |pair| %>
+          <%= render 'card-pair-mini-2', pair: pair %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
-
-
-
