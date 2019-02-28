@@ -20,5 +20,7 @@
       <%= link_to "Delete", pair_path(@pair), method: :delete %>
     </div>
   </div>
-  <!-- <img class="pair-card-big-owner" src="<%= @pair.profile.profile_pic %>"> -->
+  <div class="small-avatar abs-lefttop" style="background-image:
+         url('<%= cl_image_path pair.profile.profile_pic %>')">
+  </div>
 </div>
