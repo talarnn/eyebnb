@@ -1,9 +1,16 @@
+.forgot-password-title {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
 .form-container {
   display: flex;
   justify-content: center;
 }
 
 .form-div {
+  position: relative;
   display: flex;
   justify-content: center;
   padding: 40px 50px;
@@ -11,6 +18,10 @@
   background: #FFFFFF;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
   font-size: 14px;
+}
+
+.form-div-heighter{
+  padding-top: 60px;
 }
 
 .form-field{
@@ -39,5 +50,11 @@
   font-size: 18px;
   text-align: center;
   color: #E63946;
+}
+
+.back-to-sign{
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 
