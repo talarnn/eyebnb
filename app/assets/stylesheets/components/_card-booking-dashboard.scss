@@ -1,0 +1,41 @@
+.card-booking-dash{
+  position: relative;
+  height: 170px;
+  width: 1000px;
+  background-color: white;
+  margin: 20px 40px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+  display: flex;
+}
+.card-booking-dash-picture{
+  height: 100%;
+  width: 180px;
+  background-repeat: none;
+  background-size: cover;
+}
+.card-booking-dash-body{
+  width: 580px;
+}
+.card-booking-dash-infos{
+  padding-left: 20px;
+  padding-top: 0;
+}
+.card-booking-dash-calendardata{
+  padding-left: 50px;
+  margin-top: 20px;
+}
+
+.card-booking-dash-status{
+  position: absolute;
+  top:0;
+  right:0;
+  padding-top: 10px;
+  padding-right: 20px;
+}
+.card-booking-dash-controls{
+  position: absolute;
+  bottom:0;
+  right:0;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
