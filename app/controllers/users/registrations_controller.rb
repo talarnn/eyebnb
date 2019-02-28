@@ -29,11 +29,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
       set_minimum_password_length
       respond_with resource
     end
-    @profile = Profile.new
-    @profile.first_name = params[:first_name]
-    @profile.last_name = params[:last_name]
-    @profile.user = User.last
-    @profile.save if User.last.profile == nil
+    @profile = Profile.new(
+      first_name: params[:first_name],
+      last_name: params[:last_name],
+      user: User.last,
+      remote_profile_pic_url: 'https://picsum.photos/300/300?image=1062'
+    )
+    @profile.save if User.last.profile.nil?
   end
 
   # GET /resource/edit

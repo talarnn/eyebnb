@@ -10,10 +10,7 @@
                 autofocus: true,
                 value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
                 input_html: { autocomplete: "email" } %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Resend confirmation instructions" %>
+    <%= f.button :submit, "Resend confirmation instructions", class: "w-400 submit-button red-hover" %>
   </div>
 <% end %>
 

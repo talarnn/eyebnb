@@ -1,10 +1,13 @@
-<%= simple_form_for(@profile) do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :last_name %>
-  <%= f.input :address %>
-  <%= f.input :tel %>
-  <%= f.input :profile_pic %>
-  <%= f.submit  %>
-<% end %>
+<container class="form-container">
+  <div class="form-div blue-font lowercase">
+    <%= simple_form_for(@profile) do |f| %>
+      <%= f.input :profile_pic %>
+      <%= f.input :first_name, input_html: { class: "form-field" } %>
+      <%= f.input :last_name, input_html: { class: "form-field" } %>
+      <%= f.input :address, input_html: { class: "form-field" } %>
+      <%= f.input :tel, input_html: { class: "form-field" } %>
+      <%= f.submit class: "w-400 submit-button green-button green-hover lowercase" %>
+    <% end %>
+  </div>
+</container>
 

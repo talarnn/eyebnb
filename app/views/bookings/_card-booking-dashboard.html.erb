@@ -1,0 +1,57 @@
+<div class="card-booking-dash">
+  <div class="card-booking-dash-picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
+         url('<%= image_path booking.pair.picture %>')">
+  </div>
+  <div class="card-booking-dash-body">
+    <div class="card-booking-dash-infos">
+      <h4 class="red-font capitalize bold"><%= booking.pair.brand %></h4>
+      <h4><%= booking.pair.title %></h4>
+      <p class="capitalize">owner:
+        <%= link_to booking.pair.profile.first_name, profile_path(booking.pair.profile.id) %></p>
+    </div>
+    <div class="card-booking-dash-calendardata">
+      <h5 class="bold">reservation data here</h5>
+    </div>
+  </div>
+  <div class="card-booking-dash-interaction">
+    <div class="card-booking-dash-status">
+      <% if booking.profile == current_user %>
+        <% if booking.status == 'waiting' %>
+          <h5 class="blue-font bold right">Waiting for owner'approval..</h5>
+        <% elsif booking.status == 'accepted' %>
+          <h5 class="blue-font bold right">Waiting for you to pay..</h5>
+        <% else %>
+          <h5 class="blue-font bold right">You have the pair at home !</h5>
+        <% end %>
+      <% elsif booking.pair.profile == current_user %>
+        <% if booking.status == 'waiting' %>
+          <h5 class="blue-font bold right">Waiting your approval..</h5>
+        <% elsif booking.status == 'accepted' %>
+          <h5 class="blue-font bold right">Waiting for payment..</h5>
+        <% else %>
+          <h5 class="blue-font bold right">
+            The pair is at <%= booking.profile.first_name %>'s home.
+          </h5>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="card-booking-dash-controls">
+      <% if booking.profile == current_user %>
+        <% if booking.status == 'waiting' %>
+          <%= link_to "Pay for it",'/', class: "btn secondaryblue " %>
+        <% elsif booking.status == 'accepted' %>
+          <%= link_to "Pay for it",'/', class: "btn btnblue " %>
+        <% else %>
+          <%= link_to "Give it back",'/', class: "btn btnyellow " %>
+        <% end %>
+      <% elsif booking.pair.profile == current_user %>
+        <% if booking.status == 'waiting' %>
+          <%= link_to "Accept", '/', class: "btn btngreen " %>
+          <%= link_to "Refuse", '/', class: "btn btnred " %>
+        <% elsif booking.status == 'accepted' %>
+          <%= link_to "Cancel approval", '/', class: "btn secondaryred " %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
