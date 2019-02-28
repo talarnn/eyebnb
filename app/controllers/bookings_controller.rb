@@ -20,13 +20,14 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    redirect_to root_path
+    raise
+    redirect_to dashboard_path(current_user.profile)
   end
 
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to root_path
+    redirect_to dashboard_path(current_user.profile)
   end
 
   private
