@@ -1,1 +1,7 @@
-<h2>LE petit poeny</h2>
+<div class="container">
+  <%= simple_form_for([@pair, @booking]) do |f| %>
+    <%= f.input :beginning_date, as: :string, label: "Dates", placeholder: "From", wrapper_html: { class: "inline_field_wrapper" } %>
+    <%= f.input :end_date, as: :string, label: '&nbsp;'.html_safe, placeholder: "To", wrapper_html: { class: "inline_field_wrapper" } %>
+    <%= f.submit "book", class: "btn btn-primary btn-lg btn-block btn-booking" %>
+  <% end %>
+</div>
