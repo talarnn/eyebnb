@@ -20,7 +20,8 @@ puts "Creating 10 fakes users with theirs pairs"
     last_name: Faker::Name.last_name,
     address: Faker::Address.full_address,
     tel: rand(10..99),
-    user: user
+    user: user,
+    profile_pic:'image/upload/v1551276958/gfpgnejglh2kvvzer0p2.jpg'
   )
   profile.save!
   rand(1..10).times do

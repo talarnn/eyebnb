@@ -8,6 +8,9 @@ class ProfilesController < ApplicationController
   end
 
   def dashboard
+    unless current_user.profile == @profile
+      redirect_to profile_path(@profile)
+    end
     @profile_bookings = @profile.bookings
     @profile_pairs = @profile.pairs
   end
