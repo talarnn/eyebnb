@@ -6,21 +6,14 @@
 .form-div {
   display: flex;
   justify-content: center;
-  position: relative;
-  width: 600px;
-  height: 650px;
-  padding: 40px 20px 50px 20px;
+  padding: 40px 50px;
   margin: 30px;
   background: #FFFFFF;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-  font-style: normal;
-  font-weight: bold;
-  line-height: normal;
   font-size: 14px;
-  color: #235789;
 }
 
-.field{
+.form-field{
   width: 400px;
   height: 45px;
   background: #FFFFFF;
@@ -29,14 +22,9 @@
   border-radius: 6px;
 }
 
-.back-to-other-options {
-  position: absolute;
-  top: 15px;
-  left: 20px;
-}
-
-.sign-up-button{
-  margin: 40px 0 0 0;
+.sign-button{
+  margin-top: 40px;
+  margin-bottom: 20px;
   padding: 5px;
   background-color: none;
   border: 1.5px dashed #E63946;
@@ -53,8 +41,3 @@
   color: #E63946;
 }
 
-.text-standard{
-  text-align: center;
-  margin: 13px;
-  font-weight: lighter;
-}
