@@ -15,12 +15,43 @@
   </div>
   <div class="card-booking-dash-interaction">
     <div class="card-booking-dash-status">
-      <h5 class="blue-font bold right">status: <%= booking.status %></h5>
+      <% if booking.profile == current_user %>
+        <% if booking.status == 'waiting' %>
+          <h5 class="blue-font bold right">Waiting for owner'approval..</h5>
+        <% elsif booking.status == 'accepted' %>
+          <h5 class="blue-font bold right">Waiting for you to pay..</h5>
+        <% else %>
+          <h5 class="blue-font bold right">You have the pair at home !</h5>
+        <% end %>
+      <% elsif booking.pair.profile == current_user %>
+        <% if booking.status == 'waiting' %>
+          <h5 class="blue-font bold right">Waiting your approval..</h5>
+        <% elsif booking.status == 'accepted' %>
+          <h5 class="blue-font bold right">Waiting for payment..</h5>
+        <% else %>
+          <h5 class="blue-font bold right">
+            The pair is at <%= booking.profile.first_name %>'s home.
+          </h5>
+        <% end %>
+      <% end %>
     </div>
     <div class="card-booking-dash-controls">
-      <%= link_to "Accepter", '/', class: "btn btngreen " %>
-      <%= link_to "Refuser", '/', class: "btn btnred " %>
-      <%= link_to "Pay for it",'/', class: "btn btnblue " %>
+      <% if booking.profile == current_user %>
+        <% if booking.status == 'waiting' %>
+          <%= link_to "Pay for it",'/', class: "btn secondaryblue " %>
+        <% elsif booking.status == 'accepted' %>
+          <%= link_to "Pay for it",'/', class: "btn btnblue " %>
+        <% else %>
+          <%= link_to "Give it back",'/', class: "btn btnyellow " %>
+        <% end %>
+      <% elsif booking.pair.profile == current_user %>
+        <% if booking.status == 'waiting' %>
+          <%= link_to "Accept", '/', class: "btn btngreen " %>
+          <%= link_to "Refuse", '/', class: "btn btnred " %>
+        <% elsif booking.status == 'accepted' %>
+          <%= link_to "Cancel approval", '/', class: "btn secondaryred " %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
