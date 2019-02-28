@@ -1,15 +1,8 @@
-
 <div class="pair-card-index">
   <a href=<%= pair_path(pair.id) %>>
-    <% if pair.picture?  %>
-      <div class="pair-card-index-picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
-             url('<%= cl_image_path pair.picture %>')">
-      </div>
-    <% else  %>
-      <div class="pair-card-index-picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
-             url('<%= image_url 'pair-placeholder.png' %>')">
-      </div>
-    <% end %>
+  <div class="pair-card-index-picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
+    url('<%= cl_image_path pair.picture %>')">
+  </div>
   <div class="pair-card-index-body">
     <h4 class="red-font capitalize bold"><%= pair.brand %></h3>
     <h4><%= pair.title %></h3>
@@ -21,4 +14,3 @@
   </div>
   </a>
 </div>
-

@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 puts "Destroy all users"
 User.destroy_all
 Profile.destroy_all
@@ -12,7 +5,7 @@ puts "Destroy all pairs"
 Pair.destroy_all
 
 puts "Creating 10 fakes users with theirs pairs"
-10.times do
+1.times do
   user = User.new(email: Faker::Internet.email, password: Faker::Company.name)
   user.save!
   profile = Profile.new(
@@ -21,10 +14,10 @@ puts "Creating 10 fakes users with theirs pairs"
     address: Faker::Address.full_address,
     tel: rand(10..99),
     user: user,
-    profile_pic:'image/upload/v1551276958/gfpgnejglh2kvvzer0p2.jpg'
+    remote_profile_pic_url:'https://picsum.photos/300/300?image=1062'
   )
   profile.save!
-  rand(1..10).times do
+  rand(5..20).times do
     pair = Pair.new(
       title: "#{Faker::FunnyName.name} #{rand(1..9999)}",
       brand: Faker::App.name,
@@ -33,10 +26,12 @@ puts "Creating 10 fakes users with theirs pairs"
       left_eye_correction: rand(0..10),
       correction_type: ["Presbyopia", "Short sightedness", "Astigmatic", "Farsightedness"].sample,
       price: rand(10..100),
-      profile:profile
+      profile:profile,
+      remote_picture_url:'https://cdn.trendhunterstatic.com/thumbs/ksubi-eyewear-sigma.jpeg'
     )
-    puts pair.picture
     pair.save!
+    print '#'
+    puts ''
   end
 end
 

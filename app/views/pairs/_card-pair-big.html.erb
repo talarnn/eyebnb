@@ -1,13 +1,7 @@
 <div class="pair-card-big">
-  <% if pair.picture?  %>
-      <div class="pair-card-big-picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
-             url('<%= cl_image_path pair.picture %>')">
-      </div>
-    <% else  %>
-      <div class="pair-card-big-picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
-             url('<%= image_url 'pair-placeholder.png' %>')">
-      </div>
-    <% end %>
+  <div class="pair-card-big-picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
+         url('<%= cl_image_path pair.picture %>')">
+  </div>
   <div class ="pair-card-big-body">
     <div class="pair-card-big-infos">
       <h4 class="blue-font right-align"><%= @pair.price %> €/day</h4>
