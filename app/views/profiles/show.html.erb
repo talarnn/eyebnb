@@ -2,7 +2,11 @@
   <div class="row">
     <div class="col-xs-12 col-sm-4">
       <div class="img-container">
-        <img class="image" src='http://kitt.lewagon.com/placeholder/users/ssaunier'>
+        <% if @profile.profile_pic? %>
+            <%= cl_image_tag @profile.profile_pic, class: "image"%>
+          <% else %>
+            <%= image_tag "user-placeholder", class: "image"%>
+          <% end %>
       </div>
       <%= render 'panel', profile: @profile %>
     </div>
@@ -23,4 +27,4 @@
 </div>
 
 
-      
+
