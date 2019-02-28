@@ -3,7 +3,7 @@
   height: 400px;
   width: 800px;
   background-color: white;
-  margin: 50px auto;
+  margin: 30px auto;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   display: flex;
 }
@@ -21,17 +21,21 @@
 
 .pair-card-big-infos{
   padding: 10px 20px;
+  overflow: hidden;
 }
 
 .pair-card-big-controls{
-  padding-top: 20px;
+  padding-top: 5px;
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: center;
+  width: 200px;
+  height: 140px;
+  margin: 0 auto;
 }
 
-.pair-card-index-correction{
+.pair-card-big-correction{
   display: flex;
   justify-content: space-around;
 }

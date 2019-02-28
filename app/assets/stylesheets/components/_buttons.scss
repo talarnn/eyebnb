@@ -1,0 +1,94 @@
+// # Consider applying this class only on links (<a>)
+.btn{
+  padding: 8px 20px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  margin: 4px 4px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.5s ease;
+}
+.btnblue{
+  color: white;
+  background-color: $blue;
+}
+.btngreen{
+  color: white;
+  background-color: $green;
+}
+.btnred{
+  color: white;
+  background-color: $red;
+}
+.btnyellow{
+  color: white;
+  background-color: $yellow;
+}
+.btndark{
+  color: white;
+  background-color: $dark;
+}
+// SECONDARY BUTTONS
+.secondaryblue{
+  color: $blue;
+  background-color: white;
+  border: 1px dashed $blue;
+}
+.secondarygreen{
+  color: $green;
+  background-color: white;
+  border: 1px dashed $green;
+}
+.secondaryred{
+  color: $red;
+  background-color: white;
+  border: 1px dashed $red;
+}
+.secondaryyellow{
+  color: $yellow;
+  background-color: white;
+  border: 1px dashed $yellow;
+}
+.secondarydark{
+  color: $dark;
+  background-color: white;
+  border: 1px dashed $dark;
+}
+// HOVERED BUTTONS
+.secondaryblue:hover{
+  color: white;
+  background-color: $blue;
+  border: 1px dashed $blue;
+}
+.secondarygreen:hover{
+  color: white;
+  background-color: $green;
+  border: 1px dashed $green;
+}
+.secondaryred:hover{
+  color: white;
+  background-color: $red;
+  border: 1px dashed $red;
+}
+.secondaryyellow:hover{
+  color: white;
+  background-color: $yellow;
+  border: 1px dashed $yellow;
+}
+.secondarydark:hover{
+  color: white;
+  background-color: $dark;
+  border: 1px dashed $dark;
+}
+.w-200{
+  width: 200px;
+}
+
+.w-400{
+  padding: 10px 20px;
+  width: 400px;
+}
