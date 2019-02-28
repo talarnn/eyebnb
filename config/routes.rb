@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :pairs, except: [ :index ] do
     resources :bookings, only: [ :new, :create ]
   end
+  get '/booking/:id/edit', to: "bookings#edit"
   patch '/booking/:id', to: "bookings#update"
   delete '/booking/:id', to: "bookings#destroy"
   resources :profiles, only: [ :create, :show, :edit, :update ]
