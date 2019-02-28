@@ -4,11 +4,11 @@
 
   <h2>Glasses I want to wear</h2>
 
-  <ul>
+  <div class="booking-list">
     <% @profile_bookings.each do |booking| %>
-      <li><%= booking.pair.title %> - status : <%= booking.status %></li>
+      <%= render '/bookings/card-booking-dashboard', booking: booking %>
     <% end %>
-  </ul>
+  </div>
 
   <hr>
 

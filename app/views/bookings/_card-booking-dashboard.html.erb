@@ -1,0 +1,26 @@
+<div class="card-booking-dash">
+  <div class="card-booking-dash-picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
+         url('<%= cl_image_path booking.pair.picture %>')">
+  </div>
+  <div class="card-booking-dash-body">
+    <div class="card-booking-dash-infos">
+      <h4 class="red-font capitalize bold"><%= booking.pair.brand %></h4>
+      <h4><%= booking.pair.title %></h4>
+      <p class="capitalize">owner:
+        <%= link_to booking.pair.profile.first_name, profile_path(booking.pair.profile.id) %></p>
+    </div>
+    <div class="card-booking-dash-calendardata">
+      <h5 class="bold">reservation data here</h5>
+    </div>
+  </div>
+  <div class="card-booking-dash-interaction">
+    <div class="card-booking-dash-status">
+      <h5 class="blue-font bold right">status: <%= booking.status %></h5>
+    </div>
+    <div class="card-booking-dash-controls">
+      <%= link_to "Accepter", '/', class: "btn btngreen " %>
+      <%= link_to "Refuser", '/', class: "btn btnred " %>
+      <%= link_to "Pay for it",'/', class: "btn btnblue " %>
+    </div>
+  </div>
+</div>
