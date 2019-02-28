@@ -1,7 +1,13 @@
 <div class="pair-card-big">
-  <div class="pair-card-big-picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
-         url('<%= cl_image_path pair.picture %>')">
-  </div>
+  <% if pair.picture?  %>
+      <div class="pair-card-big-picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
+             url('<%= cl_image_path pair.picture %>')">
+      </div>
+    <% else  %>
+      <div class="pair-card-big-picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
+             url('<%= image_url 'pair-placeholder' %>')">
+      </div>
+    <% end %>
   <div class ="pair-card-big-body">
     <div class="pair-card-big-infos">
       <h4 class="blue-font right-align"><%= @pair.price %> €/day</h4>
@@ -21,6 +27,15 @@
     </div>
   </div>
   <div class="small-avatar abs-lefttop" style="background-image:
-         url('<%= cl_image_path pair.profile.profile_pic %>')">
+         url('<%= image_path pair.profile.profile_pic %>')">
   </div>
+  <% if pair.profile.profile_pic?  %>
+      <div class="small-avatar abs-lefttop" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
+             url('<%= cl_image_path pair.profile.profile_pic %>')">
+      </div>
+    <% else  %>
+      <div class="small-avatar abs-lefttop" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
+             url('<%= image_url 'user-placeholder' %>')">
+      </div>
+    <% end %>
 </div>

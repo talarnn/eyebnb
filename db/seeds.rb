@@ -33,8 +33,7 @@ puts "Creating 10 fakes users with theirs pairs"
       left_eye_correction: rand(0..10),
       correction_type: ["Presbyopia", "Short sightedness", "Astigmatic", "Farsightedness"].sample,
       price: rand(10..100),
-      profile:profile,
-      picture:'image/upload/v1551276958/gfpgnejglh2kvvzer0p2.jpg'
+      profile:profile
     )
     puts pair.picture
     pair.save!
