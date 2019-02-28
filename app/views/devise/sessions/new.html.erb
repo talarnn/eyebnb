@@ -1,26 +1,27 @@
 <container class="form-container">
   <div class="form-div blue-font">
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-inputs">
-        <%= f.input :email, :label => "email",
+      <div class="form-inputs lowercase">
+        <%= f.input :email,
                     required: false,
                     autofocus: true,
                     input_html: { autocomplete: "email", class: "form-field" } %>
-        <%= f.input :password, :label => "password",
+        <%= f.input :password,
                     required: false,
                     input_html: { autocomplete: "current-password", class: "form-field" } %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        
+        <div>
+        <a class="text-standard" href="/users/password/new" class=bold>forgot your password ?</a>
+        </div>
+
+        <%= f.button :submit, "sign in", class: "w-400 submit-button red-hover" %>
       </div>
 
-      <a class="text-standard" href="/users/password/new" class=bold>forgot your password ?</a>
 
-      <div class="form-actions sign-button">
-        <%= f.button :submit, "sign in" %>
-      </div>
       <div class="blue-font">
         don't have an account yet ? <a href="/users/sign_up" class="bold">sign up here</a>
       </div>
     <% end %>
-
   </div>
 </container>
