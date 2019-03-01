@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(status: "Pending", beginning_date: Date.parse(params["booking"]["beginning_date"]), end_date: Date.parse(params["booking"]["end_date"]))
+    @booking = Booking.new(status: 1, beginning_date: Date.parse(params["booking"]["beginning_date"]), end_date: Date.parse(params["booking"]["end_date"]))
     @booking.pair = Pair.find(params[:pair_id])
     @pair = Pair.find(params[:pair_id])
     @booking.profile_id = current_user.profile.id

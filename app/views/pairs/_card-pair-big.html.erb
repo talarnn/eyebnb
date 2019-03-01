@@ -14,13 +14,17 @@
       </div>
     </div>
     <div class="pair-card-big-controls">
-      <% if pair.profile == current_user.profile %>
-        <%= link_to "Edit", edit_pair_path(@pair), class: "btn secondaryblue w-200" %>
-        <%= link_to "Delete", pair_path(@pair), method: :delete, class: "btn btnred w-200" %>
+      <% if user_signed_in? %>
+        <% if pair.profile == current_user.profile %>
+          <%= link_to "Edit", edit_pair_path(@pair), class: "btn secondaryblue w-200" %>
+          <%= link_to "Delete", pair_path(@pair), method: :delete, class: "btn btnred w-200" %>
+        <% else %>
+          <a href="/pairs/<%= params[:id] %>/#calendar" class="btn btngreen w-200">Book it!</a>
+        <% end %>
       <% else %>
         <a href="/pairs/<%= params[:id] %>/#calendar" class="btn btngreen w-200">Book it!</a>
       <% end %>
-      </div>
+    </div>
   </div>
   <a href="/profiles/<%= @pair.profile_id %>">
     <div class="small-avatar abs-lefttop" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
