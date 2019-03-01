@@ -4,7 +4,7 @@ Profile.destroy_all
 puts "Destroy all pairs"
 Pair.destroy_all
 
-puts "Creating 10 fakes users with theirs pairs"
+puts "Creating 1 fakes users with theirs pairs"
 1.times do
   user = User.new(email: "pugmaster@hotmail.com", password: "aaaaaa")
   user.save!
