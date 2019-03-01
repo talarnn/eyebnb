@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:update, :destroy]
+  before_action :set_booking, only: [:update, :destroy, :increment_status, :decrement_status]
   def new
     @pair = Pair.find(params[:pair_id])
     @booking = Booking.new
@@ -18,8 +18,19 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking = Booking.find(params[:id])
     @booking.update(booking_params)
+    redirect_to dashboard_path(current_user.profile)
+  end
+
+  def increment_status
+    @booking.status += 1
+    @booking.save
+    redirect_to dashboard_path(current_user.profile)
+  end
+
+  def decrement_status
+    @booking.status -= 1
+    @booking.save
     redirect_to dashboard_path(current_user.profile)
   end
 

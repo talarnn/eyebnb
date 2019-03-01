@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     resources :bookings, only: [ :new, :create ]
   end
   get '/booking/:id/edit', to: "bookings#edit"
-  patch '/booking/:id', to: "bookings#update"
+  get '/booking/:id/increment_status', to: "bookings#increment_status", as:'increment'
+  get '/booking/:id/decrement_status', to: "bookings#decrement_status", as:'decrement'
+  patch '/booking/:id', to: "bookings#update", as:'booking'
   delete '/booking/:id', to: "bookings#destroy"
   resources :profiles, only: [ :create, :show, :edit, :update ]
   get 'profiles/:id/dashboard', to: "profiles#dashboard", as: 'dashboard'

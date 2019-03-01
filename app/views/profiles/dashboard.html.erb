@@ -1,5 +1,5 @@
 <div class="booking-list">
-  <%= link_to "Create a new pair", new_pair_path, class: 'btn btnblue' %>
+  <%= link_to "Create a new pair", new_pair_path, class: 'btn btnblue btn-center' %>
   <h3>Glasses I want to wear</h3>
   <% current_user.profile.bookings.each do |booking| %>
     <%= render '/bookings/card-booking-dashboard', booking: booking %>
