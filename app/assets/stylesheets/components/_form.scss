@@ -72,3 +72,33 @@
   left: 10px;
 }
 
+
+.correction-fields {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.w-150 {
+  width: 185px;
+}
+
+.margin-right {
+  margin-right: 30px;
+}
+
+.w-300 {
+  width: 300px;
+}
+
+.picture-show {
+  height: 50vh;
+  width: 40vw;
+  margin-right: 50px;
+  border: 1px solid black;
+  margin-top: 25px;
+}
+
+.picture-uploader {
+  bottom: 100px;
+  left: 100px;
+}

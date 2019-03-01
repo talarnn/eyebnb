@@ -21,7 +21,6 @@ puts "Creating 10 fakes users with theirs pairs"
     pair = Pair.new(
       title: "#{Faker::FunnyName.name} #{rand(1..9999)}",
       brand: Faker::App.name,
-      description: Faker::Games::Fallout.quote,
       right_eye_correction: rand(0..10),
       left_eye_correction: rand(0..10),
       correction_type: ["Presbyopia", "Short sightedness", "Astigmatic", "Farsightedness"].sample,
