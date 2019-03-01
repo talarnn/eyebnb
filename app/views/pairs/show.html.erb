@@ -1,4 +1,4 @@
 <%= render 'card-pair-big', pair: @pair %>
-<% if @pair.profile != current_user.profile %>
-  <%= render 'calendar', pair: @pair %>
+<% if user_signed_in? &&  @pair.profile != current_user.profile %>
+    <%= render 'calendar', pair: @pair %>
 <% end %>
