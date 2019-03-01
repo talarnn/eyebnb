@@ -15,7 +15,7 @@ class PairsController < ApplicationController
 
   def create
     @pair = Pair.new(pair_params)
-    @pair.remote_picture_url = 'https://cdn.trendhunterstatic.com/thumbs/ksubi-eyewear-sigma.jpeg'
+    @pair.remote_picture_url = 'https://cdn.trendhunterstatic.com/thumbs/ksubi-eyewear-sigma.jpeg' unless @pair.picture
     @pair.profile_id = current_user.profile.id
     if @pair.save
       redirect_to pair_path(@pair)
@@ -47,7 +47,6 @@ class PairsController < ApplicationController
       :title,
       :brand,
       :price,
-      :description,
       :profile_id,
       :correction_type,
       :right_eye_correction,
