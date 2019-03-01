@@ -1,36 +1,13 @@
-<h1>Profiles#dashboard</h1>
-  <h2><%= link_to "Create a new pair", new_pair_path %></h2>
-  <hr>
-
-  <h2>Glasses I want to wear</h2>
-
-  <div class="booking-list">
-    <% current_user.profile.bookings.each do |booking| %>
+<div class="booking-list">
+  <%= link_to "Create a new pair", new_pair_path, class: 'btn btnblue' %>
+  <h3>Glasses I want to wear</h3>
+  <% current_user.profile.bookings.each do |booking| %>
+    <%= render '/bookings/card-booking-dashboard', booking: booking %>
+  <% end %>
+  <h3>My glasses's bookings</h3>
+  <% current_user.profile.pairs.each do |pair| %>
+    <% pair.bookings.each do |booking| %>
       <%= render '/bookings/card-booking-dashboard', booking: booking %>
     <% end %>
-  </div>
-
-  <hr>
-
-  <h2>My glasses' booking</h2>
-
-  <ul>
-    <% @profile.pairs.each do |pair| %>
-        <li>
-          <%= pair.title %>
-        </li>
-    <% end %>
-  </ul>
-
-  <hr>
-
-  <h2>My pairs</h2>
-
-  <ul>
-    <% @profile.pairs.each do |pair| %>
-        <li>
-          <%= link_to pair.title, pair_path(pair)  %>
-        </li>
-    <% end %>
-  </ul>
-
+  <% end %>
+</div>
