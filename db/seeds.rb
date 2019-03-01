@@ -17,9 +17,9 @@ puts "Creating 1 fakes users with theirs pairs"
     remote_profile_pic_url:'https://picsum.photos/300/300?image=1062'
   )
   profile.save!
-  rand(5..20).times do
+  20.times do
     pair = Pair.new(
-      title: "#{Faker::FunnyName.name} #{rand(1..9999)}",
+      title: "#{Faker::Beer.brand} #{rand(1..9999)}",
       brand: Faker::App.name,
       right_eye_correction: rand(0..10),
       left_eye_correction: rand(0..10),
@@ -30,15 +30,14 @@ puts "Creating 1 fakes users with theirs pairs"
     )
     pair.save!
     print '#'
-    puts ''
   end
 end
 
-puts "Creating 5 bookings"
-5.times do
-  booking = Booking.new(beginning_date: Faker::Date.backward(14), end_date: Faker::Date.forward(23), status: ["waiting", "confirmed"].sample)
-  booking.pair = Pair.find(rand(Pair.first.id..Pair.last.id))
-  booking.profile = Profile.find(rand(Profile.first.id..Profile.last.id))
-  booking.save!
-end
+#puts "Creating 5 bookings"
+#5.times do
+#  booking = Booking.new(beginning_date: Faker::Date.backward(14), end_date: Faker::Date.forward(23), status: ["waiting", "confirmed"].sample)
+#  booking.pair = Pair.find(rand(Pair.first.id..Pair.last.id))
+#  booking.profile = Profile.find(rand(Profile.first.id..Profile.last.id))
+#  booking.save!
+#end
 
