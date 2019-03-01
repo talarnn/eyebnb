@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     @pair = Pair.find(params[:pair_id])
     @booking.profile_id = current_user.profile.id
     if @booking.save
-      redirect_to pair_path(@pair)
+      redirect_to dashboard_path(current_user.profile)
     else
       render :new
     end
