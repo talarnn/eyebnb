@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_28_132532) do
+ActiveRecord::Schema.define(version: 2019_03_01_100554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 2019_02_28_132532) do
   create_table "pairs", force: :cascade do |t|
     t.string "title"
     t.string "brand"
-    t.text "description"
     t.string "picture"
     t.float "right_eye_correction"
     t.float "left_eye_correction"

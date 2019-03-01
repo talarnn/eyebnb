@@ -3,17 +3,10 @@
 <container class="form-container">
   
   <div class="form-div blue-font lowercase">
-  <div class="picture-show">
-    <form class="picture-show" id="form1" runat="server">
-      <input type='file' id="imgInp" />
-      <img id="blah" src="#" alt="your image" />
-    </form>
-  </div>
     <%= simple_form_for @pair do |f| %>
       <%= f.input :picture %>
       <%= f.input :picture_cache, as: :hidden %>
       <%= f.input :title, placeholder: 'Title of your glasses', input_html: { class: "form-field" } %>
-      <%= f.input :description, placeholder: 'Give a fancy description to your glasses!', input_html: { class: "form-field" } %>
       <%= f.input :brand, placeholder: 'Brand of your glasses', input_html: { class: "form-field" } %>
       <%= f.input :price, placeholder: 'What is your price per day?', input_html: { class: "form-field" } %>
       <%= f.input :correction_type, collection: ["Presbyopia", "Short sightedness", "Astigmatic", "Farsightedness"], input_html: { class: "form-field" } %>
