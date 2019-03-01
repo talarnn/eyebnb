@@ -42,7 +42,7 @@
         <% elsif booking.status == 2 %>
           <%= link_to "Pay for it", increment_path(booking), class: "btn btnblue " %>
         <% else %>
-          <%= link_to "Give it back", increment_path(booking), class: "btn btnyellow " %>
+          <%= link_to "Give it back", booking_path(booking), method: :delete, class: "btn btnyellow " %>
         <% end %>
       <% elsif booking.pair.profile.id == current_user.id %>
         <% if booking.status == 1 %>
