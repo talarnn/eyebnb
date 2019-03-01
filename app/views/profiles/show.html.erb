@@ -2,7 +2,7 @@
 
   <div class="infos">
     <div class="img-container">
-        <%= cl_image_tag @profile.profile_pic, class: "image"%>
+        <%= cl_image_tag @profile.profile_pic, class: "big-avatar"%>
         <%= link_to 'Edit my profile', edit_profile_path(@profile), class: "btn secondaryblue w-200" %>
     </div>
     <%= render 'panel', profile: @profile %>
