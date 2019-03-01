@@ -17,9 +17,10 @@
       <p>Member since <%= @profile.created_at.to_date %></p>
     </div>
     <div class="card-mini-container">
-    <h3>Previous bookings</h3>
+    
       <div class="display">
       <% if @profile.bookings != [] %>
+      <h3>Previous bookings</h3>
         <% @profile.bookings.each do |booking| %>
           <%= render 'card-pair-mini', booking: booking %>
         <% end %>
