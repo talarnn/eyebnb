@@ -9,7 +9,7 @@
           Phone number
         </div>
         <div class="col-3 col-middle">
-          <i class="far fa-check-circle"></i>
+          <p><%= @profile.tel %></p>
         </div>
       </li>
       <li class="row row-table space-2">
@@ -17,7 +17,7 @@
           Email
         </div>
         <div class="col-3 col-middle">
-          <i class="far fa-check-circle"></i>
+          <p><%= @profile.user.email %></p>
         </div>
       </li>
       <li class="row row-table space-2">
@@ -25,7 +25,11 @@
           Address
         </div>
         <div class="col-3 col-middle">
-          <i class="far fa-check-circle"></i>
+          <% if profile.address == "" %>
+            <p>Not defined</p>
+          <% else %>
+            <p><%= @profile.address %></p>
+          <% end %>
         </div>
       </li>
     </ul>
