@@ -7,7 +7,6 @@
       <h4 class="blue-font right-align"><%= @pair.price %> €/day</h4>
       <h4 class="red-font capitalize bold"><%= @pair.brand %></h4>
       <h4><%= pair.title %></h4>
-      <p><%= @pair.description %></p>
       <p class="bold blue-font centered">correction: <%= pair.correction_type %> </p>
       <div class="pair-card-index-correction">
         <div class="bold blue-font">L: <%= pair.left_eye_correction %></div>
@@ -20,16 +19,9 @@
       <%= link_to "Delete", pair_path(@pair), method: :delete, class: "btn btnred w-200" %>
     </div>
   </div>
-  <div class="small-avatar abs-lefttop" style="background-image:
-         url('<%= image_path pair.profile.profile_pic %>')">
-  </div>
-  <% if pair.profile.profile_pic?  %>
-      <div class="small-avatar abs-lefttop" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
-             url('<%= cl_image_path pair.profile.profile_pic %>')">
-      </div>
-    <% else  %>
-      <div class="small-avatar abs-lefttop" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
-             url('<%= image_url 'user-placeholder.png' %>')">
-      </div>
-    <% end %>
+  <a href="/profiles/<%= @pair.profile_id %>">
+    <div class="small-avatar abs-lefttop" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
+      url('<%= cl_image_path pair.profile.profile_pic %>')">
+    </div>
+  </a>
 </div>
