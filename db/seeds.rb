@@ -6,7 +6,7 @@ Pair.destroy_all
 
 puts "Creating 10 fakes users with theirs pairs"
 1.times do
-  user = User.new(email: Faker::Internet.email, password: Faker::Company.name)
+  user = User.new(email: "pugmaster@hotmail.com", password: "aaaaaa")
   user.save!
   profile = Profile.new(
     first_name: Faker::Name.first_name,
