@@ -1,5 +1,14 @@
+<h1 class="centered">Create new pair</h1>
+
 <container class="form-container">
+  
   <div class="form-div blue-font lowercase">
+  <div class="picture-show">
+    <form class="picture-show" id="form1" runat="server">
+      <input type='file' id="imgInp" />
+      <img id="blah" src="#" alt="your image" />
+    </form>
+  </div>
     <%= simple_form_for @pair do |f| %>
       <%= f.input :picture %>
       <%= f.input :picture_cache, as: :hidden %>
@@ -8,9 +17,11 @@
       <%= f.input :brand, placeholder: 'Brand of your glasses', input_html: { class: "form-field" } %>
       <%= f.input :price, placeholder: 'What is your price per day?', input_html: { class: "form-field" } %>
       <%= f.input :correction_type, collection: ["Presbyopia", "Short sightedness", "Astigmatic", "Farsightedness"], input_html: { class: "form-field" } %>
-      <%= f.input :left_eye_correction, placeholder: "Don't be shy!", input_html: { class: "form-field" } %>
-      <%= f.input :right_eye_correction, placeholder: "Don't be shy!", input_html: { class: "form-field" } %>
-      <%= f.button :submit, "create new pair", class: "w-400 submit-button green-button green-hover" %>
+      <div class="correction-fields">
+        <%= f.input :left_eye_correction, placeholder: "Don't be shy!", input_html: { class: "form-field w-150 margin-right" } %>
+        <%= f.input :right_eye_correction, placeholder: "Don't be shy!", input_html: { class: "form-field w-150" } %>
+      </div>
+      <%= f.button :submit, "create new pair", class: "secondaryblue w-400" %>
     <% end %>
   </div>
 </container>
