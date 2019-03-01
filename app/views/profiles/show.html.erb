@@ -13,7 +13,17 @@
       <h1><%= @profile.first_name %> - <%= @profile.last_name %></h1>
       <p>Member since <%= @profile.created_at.to_date %></p>
     </div>
-    <div class="card-mini-container">
+    <div class="card-mini-container-2">
+      <div class="display">
+      <% if @profile.pairs != [] %>
+      <h3><%= @profile.first_name %> has some pairs to lease!</h3>
+        <% @profile.pairs.each do |pair| %>
+          <%= render 'card-pair-mini-2', pair: pair %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="card-mini-container">
     
       <div class="display">
       <% if @profile.bookings != [] %>
@@ -24,14 +34,4 @@
       <% end %>
       </div>
     </div>
-    <div class="card-mini-container-2">
-    <h3><%= @profile.first_name %> has some pairs to lease!</h3>
-      <div class="display">
-      <% if @profile.pairs != [] %>
-        <% @profile.pairs.each do |pair| %>
-          <%= render 'card-pair-mini-2', pair: pair %>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
 </div>
