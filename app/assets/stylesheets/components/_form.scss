@@ -90,6 +90,10 @@
   width: 300px;
 }
 
+.w-800 {
+  width: 800px;
+}
+
 .picture-show {
   height: 50vh;
   width: 40vw;
@@ -101,4 +105,12 @@
 .picture-uploader {
   bottom: 100px;
   left: 100px;
+}
+
+.centered {
+  margin:30px auto;
+}
+
+.kill-padding {
+  padding: 0;
 }
