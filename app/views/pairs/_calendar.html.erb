@@ -1,0 +1,7 @@
+<div id="calendar" class="form-div blue-font lowercase w-800 centered">
+  <%= simple_form_for([@pair, @booking]) do |f| %>
+    <%= f.input :beginning_date, as: :string, label: "dates", placeholder: "from", wrapper_html: { class: "inline_field_wrapper" } %>
+    <%= f.input :end_date, as: :string, label: '&nbsp;'.html_safe, placeholder: "To", wrapper_html: { class: "inline_field_wrapper" } %>
+    <%= f.submit "Book it", class: "btn btngreen btn-lg btn-block btn-booking" %>
+  <% end %>
+</div>
