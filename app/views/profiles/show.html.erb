@@ -1,21 +1,17 @@
 <div class="container flex">
-  
+
   <div class="infos">
     <div class="img-container">
-      <% if @profile.profile_pic? %>
         <%= cl_image_tag @profile.profile_pic, class: "image"%>
-      <% else %>
-        <%= image_tag "user-placeholder", class: "image"%>
-      <% end %>
+        <%= link_to 'Edit my profile', edit_profile_path(@profile), class: "btn secondaryblue w-200" %>
     </div>
     <%= render 'panel', profile: @profile %>
-
   </div>
-  
+
   <div class="bookings">
     <div class="titles">
       <h1><%= @profile.first_name %> - <%= @profile.last_name %></h1>
-      <p>Member since <%= @profile.created_at.to_date %></p>  
+      <p>Member since <%= @profile.created_at.to_date %></p>
     </div>
     <div class="card-mini-container">
     <h3>Previous bookings</h3>
