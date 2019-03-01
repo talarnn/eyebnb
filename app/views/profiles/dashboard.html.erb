@@ -5,7 +5,7 @@
   <h2>Glasses I want to wear</h2>
 
   <div class="booking-list">
-    <% @profile_bookings.each do |booking| %>
+    <% current_user.profile.bookings.each do |booking| %>
       <%= render '/bookings/card-booking-dashboard', booking: booking %>
     <% end %>
   </div>
@@ -15,9 +15,9 @@
   <h2>My glasses' booking</h2>
 
   <ul>
-    <% @profile_pairs.each do |pair| %>
+    <% @profile.pairs.each do |pair| %>
         <li>
-          <%= pair.title if pair.bookings %>
+          <%= pair.title %>
         </li>
     <% end %>
   </ul>
@@ -27,7 +27,7 @@
   <h2>My pairs</h2>
 
   <ul>
-    <% @profile_pairs.each do |pair| %>
+    <% @profile.pairs.each do |pair| %>
         <li>
           <%= link_to pair.title, pair_path(pair)  %>
         </li>

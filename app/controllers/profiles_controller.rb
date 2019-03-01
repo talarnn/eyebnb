@@ -8,10 +8,6 @@ class ProfilesController < ApplicationController
     unless current_user.profile == @profile
       redirect_to profile_path(@profile)
     end
-    # COMMENTED FOR TESTS ONLY IF YOU SEE THIS IT'S A MISTAKE
-    # @profile_bookings = @profile.bookings
-    @profile_bookings = Booking.all
-    @profile_pairs = @profile.pairs
   end
 
   def edit

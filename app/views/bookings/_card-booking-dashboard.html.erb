@@ -15,16 +15,16 @@
   </div>
   <div class="card-booking-dash-interaction">
     <div class="card-booking-dash-status">
-      <% if booking.profile == current_user %>
-        <% if booking.status == 'waiting' %>
+      <% if booking.profile.id == current_user.id %>
+        <% if booking.status == 'Pending' %>
           <h5 class="blue-font bold right">Waiting for owner'approval..</h5>
         <% elsif booking.status == 'accepted' %>
           <h5 class="blue-font bold right">Waiting for you to pay..</h5>
         <% else %>
           <h5 class="blue-font bold right">You have the pair at home !</h5>
         <% end %>
-      <% elsif booking.pair.profile == current_user %>
-        <% if booking.status == 'waiting' %>
+      <% elsif booking.pair.profile.id == current_user.id %>
+        <% if booking.status == 'Pending' %>
           <h5 class="blue-font bold right">Waiting your approval..</h5>
         <% elsif booking.status == 'accepted' %>
           <h5 class="blue-font bold right">Waiting for payment..</h5>
@@ -36,16 +36,16 @@
       <% end %>
     </div>
     <div class="card-booking-dash-controls">
-      <% if booking.profile == current_user %>
-        <% if booking.status == 'waiting' %>
-          <%= link_to "Pay for it",'/', class: "btn secondaryblue " %>
+      <% if booking.profile.id == current_user.id %>
+        <% if booking.status == 'Pending' %>
+          <%= link_to "Pay for it",'/', class: "btn secondaryblue isDisabled" %>
         <% elsif booking.status == 'accepted' %>
           <%= link_to "Pay for it",'/', class: "btn btnblue " %>
         <% else %>
           <%= link_to "Give it back",'/', class: "btn btnyellow " %>
         <% end %>
-      <% elsif booking.pair.profile == current_user %>
-        <% if booking.status == 'waiting' %>
+      <% elsif booking.pair.profile.id == current_user.id %>
+        <% if booking.status == 'Pending' %>
           <%= link_to "Accept", '/', class: "btn btngreen " %>
           <%= link_to "Refuse", '/', class: "btn btnred " %>
         <% elsif booking.status == 'accepted' %>
